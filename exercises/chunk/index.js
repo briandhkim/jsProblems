@@ -10,24 +10,33 @@
 
 function chunk(array, size) {
 	let returnArr = [];
-    let arrSize = array.length/size;
-	for(let i = 0; i<=arrSize; i++){
-		let m = 0;
-        if(array.length){
-          	returnArr[i] = [];
-          	while(m <size){
-            	if(array.length){
-          			returnArr[i][m] = array[0];
-              		array.splice(0,1);
-              		m++;
-            	}else{
-              		break;
-            	}
-      		}
-        }
+ //    let arrSize = array.length/size;
+	// for(let i = 0; i<=arrSize; i++){
+	// 	let m = 0;
+ //        if(array.length){
+ //          	returnArr[i] = [];
+ //          	while(m <size){
+ //            	if(array.length){
+ //          			returnArr[i][m] = array[0];
+ //              		array.splice(0,1);
+ //              		m++;
+ //            	}else{
+ //              		break;
+ //            	}
+ //      		}
+ //        }
+	// }
+  	
+
+	for(let elmt of array){
+		const last = returnArr[returnArr.length-1];
+		if(!last || last.length===size){
+			returnArr.push([elmt]);
+		}else{
+			last.push(elmt);
+		}
 	}
-  
-    return returnArr;
+
     return returnArr;
 }
 
