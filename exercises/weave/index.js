@@ -28,7 +28,7 @@ function weave(sourceOne, sourceTwo) {
 	const wvQ = new Queue();
 	let alter = 0;
 	while(sourceOne.peek()||sourceTwo.peek()){
-		if(alter===0){
+		if(alter===0 && sourceOne.peek()){
 			wvQ.add(sourceOne.remove());
 			alter = 1-alter;
 		}else{
