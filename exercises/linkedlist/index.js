@@ -21,7 +21,7 @@ class LinkedList {
 
 	size(){
 		let size =  0;
-		let node = this.head
+		let node = this.head;
 		while(node){
 			size++;
 			node = node.next;
@@ -31,6 +31,20 @@ class LinkedList {
 
 	getFirst(){
 		return this.head;
+	}
+
+	getLast(){
+		if(!this.head){
+			return null;
+		}
+		let node = this.head;
+		while(node){
+			if(!node.next){
+				return node;
+			}else{
+				node = node.next;
+			}
+		}
 	}
 }
 
