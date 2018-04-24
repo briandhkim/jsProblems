@@ -16,12 +16,7 @@ class LinkedList {
 	}
 
 	insertFirst(data){
-		if(this.head){
-			this.head = new Node(data, this.head);
-		}else{
-			this.head = new Node(data);
-		}
-
+		this.head = new Node(data, this.head);
 	}
 
 }
