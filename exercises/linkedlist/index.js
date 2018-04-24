@@ -89,6 +89,22 @@ class LinkedList {
 		lastNode.next = new Node(data);
 	}
 
+	getAt(idx){
+		if(!this.head){
+			return null;
+		}
+		let idxCounter = 0;
+		let node = this.head;
+		while(node){
+			if(idxCounter === idx){
+				return node;
+			}
+			idxCounter++;
+			node = node.next;
+		}
+		return null;
+	}
+
 }
 
 module.exports = { Node, LinkedList };
