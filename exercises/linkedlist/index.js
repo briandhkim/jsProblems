@@ -109,13 +109,14 @@ class LinkedList {
 		if(!this.head){
 			return;
 		}
+		if(idx === 0){
+			this.head = this.head.next;
+			return;
+		}
 		let prevNode = this.getAt(idx-1);
 		let nextNode = this.getAt(idx+1);
-		if(!prevNode){
-			this.head = nextNode;
-		}else{
-			prevNode.next = nextNode;
-		}
+		prevNode.next = nextNode;
+
 	}
 
 }
